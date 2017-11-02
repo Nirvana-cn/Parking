@@ -3,13 +3,29 @@ const app = getApp();
 Page({
   data: {
     code: '获取验证码',
-    text_send: 't2'
+    text_send: 't2',
+    phone:'',
+    identifyCode:''
   },
   sendCode() {
+    // let delay=60;
+    // setInterval()
     this.setData({
       code: '验证码已发送',
       text_send: 't2 t2_change'
     })
+  },
+  handle_phone(event){
+    this.data.phone=event.detail.value
+    if(this.data.phone.length !== 11){
+      wx.showToast({
+        title: '手机号码错误',
+        image: '/image/19.png'
+      })
+    }
+  },
+  handle_code(event){
+    this.data.identifyCode=event.detail.value
   },
   jump() {
     // wx.request({
@@ -26,10 +42,22 @@ Page({
     //     console.log('fail')
     //   }
     // })
-    wx.navigateBack({
-      url: '../index/index',
-    })
-    app.globalData.flag = 1;
+    // wx.navigateBack({
+    //   url: '../index/index',
+    // })
+    // app.globalData.flag = 1;
+    console.log(this.data.phone,this.data.identifyCode)
+    if(this.data.phone === '123'){
+      wx.showToast({
+        title: '登录成功',
+        image: '/image/20.png'
+      })
+    }else{
+      wx.showToast({
+        title: '验证码错误',
+        image: '/image/19.png'
+      })
+    }
   },
   connect1() {
     wx.connectSocket({

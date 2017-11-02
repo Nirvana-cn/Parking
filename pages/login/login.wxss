@@ -26,8 +26,12 @@
   font-size: 30rpx;
   float: left;
   width: 60%;
+  overflow: visible;
 }
-
+.test{
+  margin-top:100rpx;
+  width:50%;
+}
 .t2 {
   font-size: 25rpx;
   padding-left:50rpx;
