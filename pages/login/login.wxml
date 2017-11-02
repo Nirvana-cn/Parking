@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class="contain">
+  <text id='t1'>欢迎来到iParking</text>
+  <input placeholder="请输入手机号码" type='number' maxlength='11' id='phone'></input>
+  <view class='c1'>
+    <input placeholder="请输入验证码" type='number' maxlength='4' id='code'></input>
+    <text class='{{text_send}}' bindtap='sendCode' plain>{{code}}</text>
+  </view>
+  <button type='primary' bindtap='jump'>注册/登录</button>
+  <text id="tip">注册即表示你已阅读，并同意《<text id="tips">用户协议</text>》</text>
+  <button bindtap='connect1'>websocket连接</button> 
+  <!-- <button bindtap='connect2' type='warn'>预约车位</button>  -->
+</view>

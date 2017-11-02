@@ -1,0 +1,72 @@
+/* pages/user/user.wxss */
+
+page {
+  background-color: #ededed;
+  margin-top: 40rpx;
+}
+
+.top {
+  width: 100%;
+}
+
+.top_contain {
+  padding: 0 20rpx;
+  height:160rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right:60rpx;
+}
+#name{
+  font-size:40rpx;
+  margin-bottom:10rpx;
+}
+#count{
+  font-size: 30rpx;
+}
+#count text{
+  margin-right:20rpx;
+}
+.bottom {
+  width: 100%;
+}
+
+.contain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #ccc;
+  background-color: #fff;
+  height: 80rpx;
+  padding: 0 20rpx;
+}
+
+.contain_in {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gap {
+  margin: 40rpx 0;
+}
+
+.pic {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}
+
+.right_pic {
+  width: 30rpx;
+  height: 30rpx;
+}

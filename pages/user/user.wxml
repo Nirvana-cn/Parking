@@ -1,0 +1,61 @@
+<view class='top'>
+  <view class='top_contain'>
+    <view class='top_contain'>
+      <image src='/image/17.png' class='head'></image>
+      <view>
+        <view id='name'>
+          <text>Your Name</text>
+        </view>
+        <view id='count'>
+          <text>余额 100</text>
+          <text>信用积分 666</text>
+        </view>
+      </view>
+    </view>
+    <image src='/image/4.png' class='right_pic'></image>
+  </view>
+</view>
+<view class='bottom'>
+  <view class='contain gap'>
+    <view class='contain_in'>
+      <image src='/image/5.png' class='pic'></image>
+      <text>我的钱包</text>
+    </view>
+    <image src='/image/4.png' class='right_pic'></image>
+  </view>
+  <view class='contain'>
+    <view class='contain_in'>
+      <image src='/image/11.png' class='pic'></image>
+      <text>我的预约</text>
+    </view>
+    <image src='/image/4.png' class='right_pic'></image>
+  </view>
+  <view class='contain'>
+    <view class='contain_in'>
+      <image src='/image/8.png' class='pic'></image>
+      <text>车位发布</text>
+    </view>
+    <image src='/image/4.png' class='right_pic'></image>
+  </view>
+  <view class='contain'>
+    <view class='contain_in'>
+      <image src='/image/9.png' class='pic'></image>
+      <text>车位管理</text>
+    </view>
+    <image src='/image/4.png' class='right_pic'></image>
+  </view>
+  <view class='contain'>
+    <view class='contain_in'>
+      <image src='/image/10.png' class='pic'></image>
+      <text>车位收藏</text>
+    </view>
+    <image src='/image/4.png' class='right_pic'></image>
+  </view>
+  <view class='contain gap'>
+    <view class='contain_in'>
+      <image src='/image/12.png' class='pic'></image>
+      <text>设置</text>
+    </view>
+    <image src='/image/4.png' class='right_pic'></image>
+  </view>
+</view>

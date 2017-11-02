@@ -1,0 +1,53 @@
+/* pages/login/login.wxss */
+
+.contain {
+  padding: 100rpx 100rpx;
+}
+
+.c1 {
+  margin-top: 60rpx;
+}
+
+#t1 {
+  font-weight: 900;
+  font-size: 50rpx;
+}
+
+#phone {
+  width: 100%;
+  height: 40rpx;
+  border-bottom: 2rpx solid #000;
+  margin-top: 60rpx;
+}
+
+#code {
+  height: 40rpx;
+  border-bottom: 2rpx solid #000;
+  font-size: 30rpx;
+  float: left;
+  width: 60%;
+}
+
+.t2 {
+  font-size: 25rpx;
+  padding-left:50rpx;
+  color:blue
+}
+
+.t2_change {
+  color:grey
+}
+
+button {
+  margin-top: 60rpx;
+}
+
+#tip {
+  font-size: 20rpx;
+  margin: 40rpx 80rpx;
+}
+
+#tips {
+  font-size: 20rpx;
+  color: blue;
+}
