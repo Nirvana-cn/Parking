@@ -70,12 +70,6 @@ Page({
     })
   },
   fun2() {
-    wx.showToast({
-      title: '刷新成功',
-      icon: 'success'
-    })
-  },
-  fun3() {
     wx.navigateTo({
       url: '../user/user',
     })

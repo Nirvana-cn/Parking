@@ -50,15 +50,15 @@ page {
   bottom: 70rpx;
   left: 20rpx;
 }
-
+.pic {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 40rpx;
+}
 .park_tool {
   position: fixed;
   bottom: 60rpx;
   right: 20rpx;
 }
 
-.pic {
-  width: 80rpx;
-  height: 80rpx;
-  margin-top: 40rpx;
-}
+

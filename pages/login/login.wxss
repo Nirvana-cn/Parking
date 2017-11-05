@@ -1,57 +1,49 @@
-/* pages/login/login.wxss */
-
 .contain {
   padding: 100rpx 100rpx;
 }
 
-.c1 {
-  margin-top: 60rpx;
-}
-
-#t1 {
+.title {
   font-weight: 900;
   font-size: 50rpx;
 }
 
-#phone {
-  width: 100%;
+.phone {
   height: 40rpx;
   border-bottom: 2rpx solid #000;
-  margin-top: 60rpx;
+  margin: 60rpx 0;
 }
 
-#code {
-  height: 40rpx;
-  border-bottom: 2rpx solid #000;
-  font-size: 30rpx;
+.wrapper {
   float: left;
-  width: 60%;
-  overflow: visible;
-}
-.test{
-  margin-top:100rpx;
-  width:50%;
-}
-.t2 {
-  font-size: 25rpx;
-  padding-left:50rpx;
-  color:blue
+  width: 50%;
 }
 
-.t2_change {
-  color:grey
+.code {
+  height: 40rpx;
+  font-size: 16px;
+  border-bottom: 2rpx solid #000;
+}
+
+.text {
+  font-size: 25rpx;
+  padding-left: 50rpx;
+  color: blue;
+}
+
+.text_change {
+  color: grey;
 }
 
 button {
   margin-top: 60rpx;
 }
 
-#tip {
+.tip {
   font-size: 20rpx;
   margin: 40rpx 80rpx;
 }
 
-#tips {
+.agreement {
   font-size: 20rpx;
   color: blue;
 }
