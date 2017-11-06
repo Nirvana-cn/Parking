@@ -6,7 +6,7 @@ Page({
     x: "120.352001",
     y: "30.313355",
     menu: 'state_disappear',
-    top: 'top_disappear',
+    top: 'state_disappear',
     park_number: '10001',
     park_location: '浙江理工大学生活一区1单元106号',
     park_time: '8:00-22:00',
@@ -35,21 +35,14 @@ Page({
       id: 4,
       latitude: 30.273435,
       longitude: 120.155711,
-      height: 40,
-      callout: {
-        content: '编号：10001',
-        padding: 10,
-        bgColor: '#63B8FF',
-        borderRadius: 5,
-        fontSize: 13,
-        color: '#fff'
-      }
-    }]
+      height: 40
+    }],
+    pic_address: ['/image/24.png', '/image/25.png','/image/22.png']
   },
   clickMap() {
     this.setData({
       menu: 'state_disappear',
-      top: 'top_disappear'
+      top: 'state_disappear'
     })
   },
   markertap(e) {
@@ -58,7 +51,17 @@ Page({
       top: 'top'
     })
   },
-  fun1() {
+  remind_1() {
+    wx.navigateTo({
+      url: '../subscribe/subscribe',
+    })
+  },
+  remind_2() {
+    wx.navigateTo({
+      url: '../lock/lock',
+    })
+  },
+  remind_3() {
     let that = this
     wx.getLocation({
       success: function (res) {
@@ -69,20 +72,24 @@ Page({
       }
     })
   },
-  fun2() {
+  remind_4() {
     wx.navigateTo({
       url: '../user/user',
     })
   },
-  remind_1() {
-    wx.showToast({
-      title: '预约成功',
-      icon: 'success'
+  select_p1(){
+    this.setData({
+      pic_address: ['/image/23.png', '/image/26.png', '/image/22.png']
     })
   },
-  remind_2() {
-    wx.navigateTo({
-      url: '../lock/lock',
+  select_p2() {
+    this.setData({
+      pic_address: ['/image/24.png', '/image/25.png', '/image/22.png']
+    })
+  },
+  select_p3() {
+    this.setData({
+      pic_address: ['/image/24.png', '/image/26.png', '/image/21.png']
     })
   },
   onLoad() {
@@ -100,17 +107,5 @@ Page({
         })
       }
     })
-  },
-  onShow() {
-    if (app.globalData.flag == 1 && app.globalData.next == 1) {
-      wx.showLoading({
-        title: '加载中',
-        mask: true
-      })
-      setTimeout(function () {
-        wx.hideLoading()
-        app.globalData.next = 0
-      }, 2000)
-    }
   }
 })

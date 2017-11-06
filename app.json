@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/login/login",
     "pages/user/user",
-    "pages/lock/lock"
+    "pages/lock/lock",
+    "pages/subscribe/subscribe"
   ],
   "window": {
     "backgroundTextStyle": "light",

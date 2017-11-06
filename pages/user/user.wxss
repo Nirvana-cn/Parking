@@ -2,7 +2,7 @@
 
 page {
   background-color: #ededed;
-  margin-top: 40rpx;
+  padding-top: 40rpx;
 }
 
 .top {

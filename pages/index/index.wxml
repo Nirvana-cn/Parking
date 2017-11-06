@@ -10,8 +10,12 @@
   <cover-view class='tool'>
     <cover-image src='/image/6.png' class='{{menu}}' bindtap='remind_1'></cover-image>
     <cover-image src='/image/7.png' class='{{menu}}' bindtap='remind_2'></cover-image>
-    <cover-image src='/image/15.png' class='pic' bindtap='fun1'></cover-image>
-    <cover-image src='/image/17.png' class='pic' bindtap='fun2'></cover-image>
+    <cover-image src='/image/15.png' class='pic' bindtap='remind_3'></cover-image>
+    <cover-image src='/image/17.png' class='pic' bindtap='remind_4'></cover-image>
   </cover-view>
-  <cover-view class='park_tool'></cover-view>
+  <cover-view class='park_tool'>
+  <cover-image src='{{pic_address[0]}}' class='photo_1' bindtap='select_p1'></cover-image>
+  <cover-image src='{{pic_address[1]}}' class='photo_2' bindtap='select_p2'></cover-image>
+  <cover-image src='{{pic_address[2]}}' class='photo_3' bindtap='select_p3'></cover-image>
+  </cover-view>
 </map>

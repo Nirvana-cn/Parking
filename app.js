@@ -34,8 +34,7 @@ App({
     })
   },
   globalData: {
-    flag:0,
-    next:0,
+    flag:1,
     userInformation:''
   }
 })
