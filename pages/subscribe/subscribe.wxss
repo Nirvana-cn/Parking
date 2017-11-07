@@ -1,1 +1,12 @@
 /* pages/subscribe/subscribe.wxss */
+page{
+  text-align: center;
+}
+.wrapper{
+  display: block;
+  margin-top: 20rpx;
+} 
+button{
+  width:80%;
+  margin-top:60rpx;
+}

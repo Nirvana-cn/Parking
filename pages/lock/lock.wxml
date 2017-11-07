@@ -1,2 +1,8 @@
 <!--pages/lock/lock.wxml-->
-<text>pages/lock/lock.wxml</text>
+<view class='wrapper'>
+  <image src='/image/17.png' class='pic'></image>
+  <view>
+    <text>解锁中...</text>
+  </view>
+  <view class='ad'>Advertisement</view>
+</view>

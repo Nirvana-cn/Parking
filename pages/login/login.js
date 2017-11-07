@@ -50,7 +50,7 @@ Page({
           console.log(res.statusCode)
           console.log(res.data)
           app.globalData.userInformation=res.data
-          app.globalData.flag = 1;
+          app.globalData.flag_login = 1;
         },
         fail() {
           wx.showToast({
@@ -60,7 +60,7 @@ Page({
         }
       })
       wx.navigateBack({
-        url: '../index/index',
+        url: '../index/index'
       })
     } else {
       wx.showToast({
@@ -70,29 +70,3 @@ Page({
     }
   }
 })
-// wx.onSocketOpen(function () {
-//   wx.sendSocketMessage({
-//     data: JSON.stringify({ type: 'join', userId: '_12' }),
-//   })
-//   wx.sendSocketMessage({
-//     data: JSON.stringify({ type: 'msgTo', userId: '_12', info: { toLockId: '12', lockPasswd: '4567' } }),
-//   })
-//   wx.onSocketMessage(function (res) {
-//     console.log(res.data)
-//   })
-// })
-// connect1() {
-//   wx.connectSocket({
-//     url: 'ws://120.25.200.217:10102/ws',
-//     header: {
-//       'content-type': 'application/json'
-//     },
-//     method: "GET",
-//     success() {
-//       console.log('success');
-//     },
-//     fail() {
-//       console.log('fail')
-//     }
-//   })
-// }

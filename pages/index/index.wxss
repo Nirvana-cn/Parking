@@ -13,7 +13,11 @@ page {
   font-size: 26rpx;
   padding: 40rpx;
 }
-
+.used_time{
+  margin:0 auto;
+  height:200rpx;
+  background-color: #fff;
+}
 .top_contain {
   width: 100%;
   display: flex;
@@ -22,14 +26,17 @@ page {
 }
 
 .info_1 {
-  height: 50rpx;
-  line-height: 50rpx;
   width: 100%;
-  background-color: #ccc;
+  height: 70rpx;
+  line-height: 70rpx;
+  color:#fff;
+  background-color: #F05B47;
 }
 
 .info_2 {
   width: 50%;
+  color:#FF6347;
+  font-weight: 500;
 }
 
 .state_disappear {

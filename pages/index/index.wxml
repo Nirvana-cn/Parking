@@ -1,12 +1,13 @@
 <!--index.wxml-->
 <map id="map" longitude='{{x}}' latitude='{{y}}' scale="17" show-location='true' markers='{{markers}}' bindmarkertap="markertap" controls='controls' bindtap='clickMap'>
   <cover-view class='{{top}}'>
-    <cover-view class='info_1'>位置：{{park_location}}</cover-view>
+    <cover-view class='info_1'>位置：{{detail.location}}</cover-view>
     <cover-view class='top_contain'>
-      <cover-view class='info_2'>车位编号：{{park_number}}</cover-view>
-      <cover-view class='info_2'>可用时段：{{park_time}}</cover-view>
+      <cover-view class='info_2'>车位编号：{{detail.num}}</cover-view>
+      <cover-view class='info_2'>可用时段：{{detail.time}}</cover-view>
     </cover-view>
   </cover-view>
+  <cover-view class='{{used_time}}'>已使用</cover-view>
   <cover-view class='tool'>
     <cover-image src='/image/6.png' class='{{menu}}' bindtap='remind_1'></cover-image>
     <cover-image src='/image/7.png' class='{{menu}}' bindtap='remind_2'></cover-image>
