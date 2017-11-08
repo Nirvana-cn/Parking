@@ -9,7 +9,7 @@ page {
 }
 
 .top {
-  background-color: #ddd;
+  background-color: #fff;
   font-size: 26rpx;
   padding: 40rpx;
 }
@@ -41,7 +41,7 @@ page {
 
 .state_disappear {
   display: none;
-  background:#ddd;
+  background:#fff;
 }
 
 .tool {

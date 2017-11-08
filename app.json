@@ -8,8 +8,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "iParking",
-    "navigationBarTextStyle": "#fff"
+    "navigationBarTextStyle": "black"
   }
 }
