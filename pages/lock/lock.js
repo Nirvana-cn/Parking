@@ -14,11 +14,11 @@ Page({
       method: "GET",
       success() {
         app.globalData.flag_use=1
-        setTimeout(function () {
-          wx.navigateBack({
-            url: '../index/index'
-          })
-        }, 2000)
+        // setTimeout(function () {
+        //   wx.navigateBack({
+        //     url: '../index/index'
+        //   })
+        // }, 2000)
       },
       fail() {
         console.log('fail')

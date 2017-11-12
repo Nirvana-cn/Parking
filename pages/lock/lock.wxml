@@ -1,8 +1,9 @@
-<!--pages/lock/lock.wxml-->
-<view class='wrapper'>
-  <image src='/image/17.png' class='pic'></image>
-  <view>
-    <text>解锁中...</text>
+<view>
+  <view class='wrapper'>
+    <image src='/image/17.png' class='pic'></image>
+    <view>
+      <text class='content'>开锁中，请不要关闭小程序</text>
+    </view>
+    <view class='ad'>Advertisement</view>
   </view>
-  <view class='ad'>Advertisement</view>
 </view>

@@ -1,10 +1,14 @@
 page{
-  background-color:#DCDCDC;
+  background-color:#2A2A32;
 }
 .wrapper{
   width:100%;
-  margin-top:100rpx;
+  padding-top:200rpx;
   text-align: center;
+}
+.content{
+  color:#fff;
+  font-size:26rpx;
 }
 .pic{
   margin-bottom: 50rpx;

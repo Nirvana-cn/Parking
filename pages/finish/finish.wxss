@@ -1,0 +1,40 @@
+page {
+  background-color: #efeef4;
+}
+
+.content {
+  padding: 100rpx 0;
+}
+
+.contain {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.text_1 {
+  font-size: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.text_2 {
+  font-size: 30rpx;
+}
+
+.wrapper {
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+}
+
+.special {
+  border-bottom: 1rpx solid #ccc;
+}
+
+.btn {
+  margin-top: 40rpx;
+  width: 90%;
+}

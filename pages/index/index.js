@@ -7,13 +7,14 @@ Page({
     y: "30.313355",
     menu: 'state_disappear',
     top: 'state_disappear',
-    used_time:'state_disappear',
+    used_time: 'state_disappear',
+    time: 0,
     detail: {
       num: '10001',
       location: '浙江理工大学生活一区1单元106号',
       time: '8:00-22:00'
     },
-    markers:[],
+    markers: [],
     pic_address: ['/image/24.png', '/image/25.png', '/image/22.png'],
     map_markers: {
       roadSide: [{
@@ -49,24 +50,25 @@ Page({
     app.globalData.park_id = -1
   },
   markertap(e) {
-    if(app.globalData.flag_use === 0){
+    if (app.globalData.flag_use === 0) {
       this.setData({
         menu: 'pic',
         top: 'top'
       })
       console.log(e.markerId)
-      app.globalData.park_id=e.markerId
+      app.globalData.park_id = e.markerId
     }
   },
   remind_1() {
-    if(app.globalData.flag_use === 0){
+    if (app.globalData.flag_use === 0) {
       wx.navigateTo({
-        url: '../subscribe/subscribe',
+        // url: '../subscribe/subscribe',
+        url: '../finish/finish'
       })
     }
   },
   remind_2() {
-    if(app.globalData.flag_use === 0){
+    if (app.globalData.flag_use === 0) {
       wx.navigateTo({
         url: '../lock/lock',
       })
@@ -91,7 +93,7 @@ Page({
   select_p1() {
     this.setData({
       pic_address: ['/image/23.png', '/image/26.png', '/image/22.png'],
-      markers:this.data.map_markers.roadSide,
+      markers: this.data.map_markers.roadSide,
       menu: 'state_disappear',
       top: 'state_disappear'
     })
@@ -131,12 +133,12 @@ Page({
       }
     })
   },
-  onShow(){
-    if(app.globalData.flag_use === 1){
+  onShow() {
+    if (app.globalData.flag_use === 1) {
       this.setData({
         menu: 'state_disappear',
         top: 'state_disappear',
-        used_time:'used_time'
+        used_time: 'used_time'
       })
     }
     if (app.globalData.flag_use === 2) {

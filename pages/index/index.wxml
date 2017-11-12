@@ -7,7 +7,16 @@
       <cover-view class='info_2'>可用时段：{{detail.time}}</cover-view>
     </cover-view>
   </cover-view>
-  <cover-view class='{{used_time}}'>已使用</cover-view>
+  <cover-view class='{{used_time}}'>
+    <cover-view class='used_wrapper'>
+      <cover-view class='used_t1'>离开车位自动结束计费</cover-view>
+      <cover-view class='used_t2'>离开后未结费？</cover-view>
+    </cover-view>
+    <cover-view class='used_wrapper'>
+      <cover-view class='used_t3'>正在使用</cover-view>
+      <cover-view class='used_t4'>{{time}}分钟</cover-view>
+    </cover-view>
+  </cover-view>
   <cover-view class='tool'>
     <cover-image src='/image/6.png' class='{{menu}}' bindtap='remind_1'></cover-image>
     <cover-image src='/image/7.png' class='{{menu}}' bindtap='remind_2'></cover-image>
@@ -15,8 +24,8 @@
     <cover-image src='/image/17.png' class='pic' bindtap='remind_4'></cover-image>
   </cover-view>
   <cover-view class='park_tool'>
-  <cover-image src='{{pic_address[0]}}' class='photo_1' bindtap='select_p1'></cover-image>
-  <cover-image src='{{pic_address[1]}}' class='photo_2' bindtap='select_p2'></cover-image>
-  <cover-image src='{{pic_address[2]}}' class='photo_3' bindtap='select_p3'></cover-image>
+    <cover-image src='{{pic_address[0]}}' class='photo_1' bindtap='select_p1'></cover-image>
+    <cover-image src='{{pic_address[1]}}' class='photo_2' bindtap='select_p2'></cover-image>
+    <cover-image src='{{pic_address[2]}}' class='photo_3' bindtap='select_p3'></cover-image>
   </cover-view>
 </map>

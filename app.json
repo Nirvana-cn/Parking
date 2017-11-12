@@ -4,7 +4,8 @@
     "pages/login/login",
     "pages/user/user",
     "pages/lock/lock",
-    "pages/subscribe/subscribe"
+    "pages/subscribe/subscribe",
+    "pages/finish/finish"
   ],
   "window": {
     "backgroundTextStyle": "light",

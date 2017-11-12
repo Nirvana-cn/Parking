@@ -1,0 +1,24 @@
+<view class='content'>
+  <view class='contain'>
+    <icon type='success' size='80'></icon>
+  </view>
+  <view class='contain'>
+    <text class='text_1'>余额支付 {{pay}}元</text>
+    <view>
+      <text class='text_2'>行程总费用{{cost}}元</text>
+    </view>
+  </view>
+  <view class='contain'>
+    <view class='wrapper special'>
+      <text>停车时间</text>
+      <text>{{time}}分钟</text>
+    </view>
+    <view class='wrapper'>
+      <text>我的钱包</text>
+      <text>{{money}}元</text>
+    </view>
+  </view>
+  <view>
+    <button type='primary' class='btn' bindtap='returnIndex'>返回首页</button>
+  </view>
+</view>
