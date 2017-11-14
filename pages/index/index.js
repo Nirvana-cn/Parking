@@ -55,15 +55,13 @@ Page({
         menu: 'pic',
         top: 'top'
       })
-      console.log(e.markerId)
       app.globalData.park_id = e.markerId
     }
   },
   remind_1() {
     if (app.globalData.flag_use === 0) {
       wx.navigateTo({
-        // url: '../subscribe/subscribe',
-        url: '../finish/finish'
+        url: '../subscribe/subscribe'
       })
     }
   },

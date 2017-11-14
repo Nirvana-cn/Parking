@@ -17,28 +17,28 @@
     </view>
   </view>
   <view class='bottom'>
-    <view class='contain gap'>
+    <view class='contain gap' bindtap='jumpToWallet'>
       <view class='contain_in'>
         <image src='/image/5.png' class='pic'></image>
         <text>我的钱包</text>
       </view>
       <image src='/image/4.png' class='right_pic'></image>
     </view>
-    <view class='contain'>
+    <view class='contain' bindtap='jumpToOrder'>
       <view class='contain_in'>
         <image src='/image/11.png' class='pic'></image>
         <text>我的预约</text>
       </view>
       <image src='/image/4.png' class='right_pic'></image>
     </view>
-    <view class='contain'>
+    <view class='contain' bindtap='jumpToPublish'>
       <view class='contain_in'>
         <image src='/image/8.png' class='pic'></image>
         <text>车位发布</text>
       </view>
       <image src='/image/4.png' class='right_pic'></image>
     </view>
-    <view class='contain'>
+    <view class='contain' bindtap='jumpToManage'>
       <view class='contain_in'>
         <image src='/image/9.png' class='pic'></image>
         <text>车位管理</text>

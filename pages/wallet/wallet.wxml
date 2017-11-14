@@ -1,0 +1,4 @@
+<view class='wrapper'>
+  <view class='money'>余额：{{money}}元</view>
+  <button type='primary' bindtap='recharge'>充值</button>
+</view>

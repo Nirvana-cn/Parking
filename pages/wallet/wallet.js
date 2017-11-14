@@ -1,30 +1,19 @@
-// pages/user/user.js
+// pages/wallet/wallet.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    money:10
   },
-  jumpToWallet() {
-    wx.navigateTo({
-      url: '../wallet/wallet',
-    })
-  },
-  jumpToOrder(){
-    wx.navigateTo({
-      url: '../order/order',
-    })
-  },
-  jumpToPublish() {
-    wx.navigateTo({
-      url: '../publish/publish',
-    })
-  },
-  jumpToManage() {
-    wx.navigateTo({
-      url: '../manage/manage',
+  recharge(){
+    wx.requestPayment({
+      timeStamp: '1490840662',
+      nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
+      package: 'prepay_id=wx2017033010242291fcfe0db70013231072',
+      signType: 'MD5',
+      paySign: '',
     })
   },
   /**

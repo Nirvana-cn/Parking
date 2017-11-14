@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<map id="map" longitude='{{x}}' latitude='{{y}}' scale="17" show-location='true' markers='{{markers}}' bindmarkertap="markertap" controls='controls' bindtap='clickMap'>
+<map id="map" longitude='{{x}}' latitude='{{y}}' scale="18" show-location='true' markers='{{markers}}' bindmarkertap="markertap" controls='controls' bindtap='clickMap'>
   <cover-view class='{{top}}'>
     <cover-view class='info_1'>位置：{{detail.location}}</cover-view>
     <cover-view class='top_contain'>

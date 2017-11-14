@@ -1,0 +1,9 @@
+.wrapper{
+  padding-top:40rpx;
+}
+.money{
+  text-align: center;
+}
+button{
+  width:80%;
+}

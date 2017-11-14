@@ -5,7 +5,11 @@
     "pages/user/user",
     "pages/lock/lock",
     "pages/subscribe/subscribe",
-    "pages/finish/finish"
+    "pages/finish/finish",
+    "pages/order/order",
+    "pages/publish/publish",
+    "pages/manage/manage",
+    "pages/wallet/wallet"
   ],
   "window": {
     "backgroundTextStyle": "light",
