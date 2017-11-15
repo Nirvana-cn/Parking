@@ -1,2 +1,18 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<view class='wrapper'>
+  <view wx:if="{{condition==0}}">没有预约</view>
+  <view wx:elif="{{condition==1}}">
+    <text>预约信息</text>
+    <view class='information'>
+      <view>
+        <text>位置：</text>
+        <text>{{location}}</text>
+      </view>
+      <view>
+        <text>时间：</text>
+        <text>{{time}}</text>
+      </view>
+      <button type='primary' class='unlock'>解锁</button>
+      <button type='warn' class='cancel'>取消预约</button>
+    </view>
+  </view>
+</view>

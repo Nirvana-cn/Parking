@@ -32,6 +32,10 @@ page {
   flex-direction: row;
   justify-content: space-between;
 }
+.used_wrapper:last-child {
+  border-top:1rpx solid #ccc;
+  padding-top:10rpx;
+}
 .used_t1{
   color:#f05b47;
 }
@@ -45,7 +49,6 @@ page {
 }
 .used_t4{
   font-size:40rpx;
-  color: #f05b47;
   margin-left:180rpx;
 }
 .top_contain {

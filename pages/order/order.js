@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    condition:1,
+    location:'浙江理工大学生活一区',
+    time:'8:00-12:00'
   },
 
   /**

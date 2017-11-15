@@ -1,1 +1,10 @@
-/* pages/order/order.wxss */
+.wrapper{
+  box-sizing: border-box;
+  padding:20rpx 60rpx;
+}
+.information{
+  margin-top:20rpx;
+}
+button{
+  margin-top:20rpx;
+}
