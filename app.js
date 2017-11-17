@@ -34,7 +34,7 @@ App({
     })
   },
   globalData: {
-    flag_login:1,
+    flag_login:0,
     flag_use:0,
     park_id:-1,
     userInformation:''

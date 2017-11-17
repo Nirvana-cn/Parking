@@ -27,6 +27,17 @@ Page({
         })
       }
     })
+    wx.request({
+      url: 'http://120.25.200.217:8080/IparkingWeb/RoadWantParking.action',
+      data: {
+        userid:16,
+        sid:4,
+        fl:1
+      },
+      success(res) {
+        console.log('success')
+      }
+    })
   }
 })
 wx.onSocketOpen(function () {

@@ -42,7 +42,7 @@ Page({
   login() {
     if (this.data.identifyCode === '123456') {
       wx.request({
-        url: 'http://120.25.200.217:8080/IparkingWeb/LoginServlet',
+        url: 'http://120.25.200.217:8080/IparkingWeb/Logintel.action',
         data: {
           phone: this.data.phone
         },
@@ -51,6 +51,9 @@ Page({
           console.log(res.data)
           app.globalData.userInformation=res.data
           app.globalData.flag_login = 1;
+          wx.navigateBack({
+            url: '../index/index'
+          })
         },
         fail() {
           wx.showToast({
@@ -59,14 +62,36 @@ Page({
           })
         }
       })
-      wx.navigateBack({
-        url: '../index/index'
-      })
     } else {
       wx.showToast({
         title: '验证码错误',
         image: '/image/19.png'
       })
     }
+  },
+  register(){
+    wx.request({
+      url: 'http://120.25.200.217:8080/IparkingWeb/Register.action',
+      data: {
+        username:'new',
+        pwd:'1234',
+        phone: this.data.phone
+      },
+      success(res) {
+        console.log(res.statusCode)
+        console.log(res.data)
+        app.globalData.userInformation = res.data
+        app.globalData.flag_login = 1;
+        wx.navigateBack({
+          url: '../index/index'
+        })
+      },
+      fail() {
+        wx.showToast({
+          title: '网络连接失败',
+          image: '/image/19.png'
+        })
+      }
+    })
   }
 })
