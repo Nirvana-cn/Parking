@@ -46,7 +46,7 @@ Page({
       })
       app.globalData.park_id = e.markerId
     }
-    if (app.globalData.flag_use === 0 && app.globalData.flag_login==1) {
+    if (app.globalData.flag_use === 0 && app.globalData.flag_login == 1) {
       let temp = {
         num: '10001',
         location: '',
@@ -98,7 +98,7 @@ Page({
       menu: 'state_disappear',
       top: 'state_disappear'
     })
-    console.log(this.data.markers)
+    // console.log(this.data.markers)
   },
   select_p2() {
     this.setData({

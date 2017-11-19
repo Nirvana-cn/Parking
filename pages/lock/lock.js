@@ -14,11 +14,6 @@ Page({
       method: "GET",
       success() {
         app.globalData.flag_use = 1
-        setTimeout(function () {
-          wx.navigateBack({
-            url: '../index/index'
-          })
-        }, 2000)
       },
       fail() {
         console.log('fail')
@@ -32,11 +27,13 @@ Page({
 wx.onSocketOpen(function () {
   let userMessage = {
     type: 'join',
-    userId: '_'+app.globalData.userInformation.userid
+    // userId: '_'+app.globalData.userInformation.userid
+    userId:'_6'
   }
   let lockMessage = {
     type: 'msgTo',
-    userId: '_' + app.globalData.userInformation.userid,
+    // userId: '_' + app.globalData.userInformation.userid,
+    userId: '_6',
     info: {
       toLockId: app.globalData.park_id,
       msg: '_6abcd'
@@ -46,12 +43,13 @@ wx.onSocketOpen(function () {
     wx.sendSocketMessage({
       data: JSON.stringify(userMessage),
     })
-    flag = 1;
+    flag = 1
   }
   wx.sendSocketMessage({
     data: JSON.stringify(lockMessage),
   })
   wx.onSocketMessage(function (res) {
+    console.log(res.data)
     if(res.data==='{6ok}'){
       wx.request({
         url: 'http://120.25.200.217:8080/IparkingWeb/RoadWantParking.action',
@@ -61,7 +59,32 @@ wx.onSocketOpen(function () {
           fl: 1
         },
         success(res) {
-          console.log('success')
+          app.globalData.hid=res.data.hid
+          // setTimeout(function () {
+          //   wx.navigateBack({
+          //     url: '../index/index'
+          //   })
+          // }, 1000)
+        },
+        fail() {
+          console.log('fail')
+        }
+      })
+    }
+    if (res.data === '{6close}') {
+      wx.request({
+        url: 'http://120.25.200.217:8080/IparkingWeb/OverSomething.action',
+        data: {
+          hid: '',
+          userid: app.globalData.userInformation.userid,
+          sid: app.globalData.park_id,
+          fl: 1
+        },
+        success(res) {
+          console.log('关锁成功')
+          wx.navigateTo({
+            url: '../finish/finish',
+          })
         },
         fail() {
           console.log('fail')
