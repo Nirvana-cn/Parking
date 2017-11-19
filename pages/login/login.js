@@ -49,7 +49,7 @@ Page({
         success(res) {
           console.log(res.statusCode)
           console.log(res.data)
-          app.globalData.userInformation=res.data
+          app.globalData.userInformation=res.data[0]
           app.globalData.flag_login = 1;
           wx.navigateBack({
             url: '../index/index'

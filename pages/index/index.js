@@ -1,9 +1,9 @@
 function AddMarker(obj) {
-  this.iconPath="/image/18.png"
-  this.id=obj.sid
-  this.latitude=obj.latitude
-  this.longitude=obj.longitude
-  this.location=obj.location
+  this.iconPath = "/image/18.png"
+  this.id = obj.sid
+  this.latitude = obj.latitude
+  this.longitude = obj.longitude
+  this.location = obj.location
 }
 const app = getApp()
 Page({
@@ -16,10 +16,10 @@ Page({
     time: 0,
     detail: {
       num: '10001',
-      location: '浙江理工大学生活一区1单元106号',
+      location: '',
       time: '8:00-22:00'
     },
-    markers:[],
+    markers: [],
     markers_1: [],
     markers_2: [],
     markers_3: [],
@@ -33,10 +33,30 @@ Page({
     app.globalData.park_id = -1
   },
   markertap(e) {
-    if (app.globalData.flag_use === 0) {
+    if (app.globalData.flag_use === 0 && app.globalData.flag_login == 0) {
+      let temp = {
+        num: '10001',
+        location: '',
+        time: '8:00-22:00'
+      }
+      temp.location = this.data.markers.filter((val) => { return val.id === e.markerId })[0].location
+      this.setData({
+        top: 'top',
+        detail: temp
+      })
+      app.globalData.park_id = e.markerId
+    }
+    if (app.globalData.flag_use === 0 && app.globalData.flag_login==1) {
+      let temp = {
+        num: '10001',
+        location: '',
+        time: '8:00-22:00'
+      }
+      temp.location = this.data.markers.filter((val) => { return val.id === e.markerId })[0].location
       this.setData({
         menu: 'pic',
-        top: 'top'
+        top: 'top',
+        detail: temp
       })
       app.globalData.park_id = e.markerId
     }
@@ -78,6 +98,7 @@ Page({
       menu: 'state_disappear',
       top: 'state_disappear'
     })
+    console.log(this.data.markers)
   },
   select_p2() {
     this.setData({
@@ -86,6 +107,7 @@ Page({
       menu: 'state_disappear',
       top: 'state_disappear'
     })
+    // console.log(this.data.markers)
   },
   select_p3() {
     this.setData({
@@ -94,6 +116,7 @@ Page({
       menu: 'state_disappear',
       top: 'state_disappear'
     })
+    // console.log(this.data.markers)
   },
   onLoad() {
     if (app.globalData.flag_login == 0) {
@@ -118,7 +141,6 @@ Page({
           let temp = new AddMarker(res.data[i])
           that.data.markers_1[i] = temp
         }
-        // console.log(that.data.markers_1)
       }
     })
     wx.request({
@@ -129,12 +151,11 @@ Page({
           let temp = new AddMarker(res.data[i])
           that.data.markers_3[i] = temp
         }
-        // console.log(that.data.markers_3)
       }
     })
   },
   onShow() {
-    let that=this
+    let that = this
     if (app.globalData.flag_use === 1) {
       this.setData({
         menu: 'state_disappear',

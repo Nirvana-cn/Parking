@@ -3,12 +3,13 @@
     <view class='top_contain'>
       <view class='top_contain'>
         <image src='/image/17.png' class='head'></image>
-        <view>
+        <view wx:if="{{condition==0}}">未登录</view>
+        <view wx:elif="{{condition==1}}">
           <view id='name'>
-            <text>Your Name</text>
+            <text>{{user.username}}</text>
           </view>
           <view id='count'>
-            <text>余额 100</text>
+            <text>余额 {{user.money}}元</text>
             <text>信用积分 666</text>
           </view>
         </view>
