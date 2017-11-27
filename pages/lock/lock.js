@@ -82,6 +82,7 @@ wx.onSocketOpen(function () {
         },
         success(res) {
           console.log('关锁成功')
+          wx.closeSocket({})
           wx.navigateTo({
             url: '../finish/finish',
           })
