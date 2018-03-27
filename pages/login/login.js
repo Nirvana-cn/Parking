@@ -47,9 +47,8 @@ Page({
           phone: this.data.phone
         },
         success(res) {
-          console.log(res.data)
-          app.globalData.userInformation=res.data[0]
-          app.globalData.flag_login = 1;
+          app.globalData.userInformation=res.data
+          app.globalData.flag_login = true;
           wx.navigateBack({
             url: '../index/index'
           })
