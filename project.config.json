@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.5.4",
 	"appid": "wx78703292b0f1ae6c",
-	"projectname": "Parking",
+	"projectname": "iParking-Tomcat",
 	"condition": {
 		"search": {
 			"current": -1,
