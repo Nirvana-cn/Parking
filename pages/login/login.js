@@ -20,7 +20,7 @@ Page({
     this.data.identifyCode = event.detail.value
   },
   sendCode() {
-    let n = 10;
+    let n = 60;
     let that=this;
     this.setData({
       code: '验证码已发送(' + n + 's)',
@@ -40,14 +40,13 @@ Page({
     }, 1000)
   },
   login() {
-    if (this.data.identifyCode === '123456') {
+    if (this.data.identifyCode === '111111') {
       wx.request({
-        url: 'http://120.25.200.217:8080/IparkingWeb/Logintel.action',
+        url: 'http://127.0.0.1:3000/user/login',
         data: {
           phone: this.data.phone
         },
         success(res) {
-          console.log(res.statusCode)
           console.log(res.data)
           app.globalData.userInformation=res.data[0]
           app.globalData.flag_login = 1;
@@ -68,30 +67,5 @@ Page({
         image: '/image/19.png'
       })
     }
-  },
-  register(){
-    wx.request({
-      url: 'http://120.25.200.217:8080/IparkingWeb/Register.action',
-      data: {
-        username:'new',
-        pwd:'1234',
-        phone: this.data.phone
-      },
-      success(res) {
-        console.log(res.statusCode)
-        console.log(res.data)
-        app.globalData.userInformation = res.data
-        app.globalData.flag_login = 1;
-        wx.navigateBack({
-          url: '../index/index'
-        })
-      },
-      fail() {
-        wx.showToast({
-          title: '网络连接失败',
-          image: '/image/19.png'
-        })
-      }
-    })
   }
 })
