@@ -38,6 +38,6 @@ App({
     flag_use:false,
     hid:0,
     park_id:-1,
-    userInformation:''
+    userName:''
   }
 })

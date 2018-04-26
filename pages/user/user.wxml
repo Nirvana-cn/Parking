@@ -6,11 +6,12 @@
         <view wx:if="{{condition==0}}">未登录</view>
         <view wx:elif="{{condition==1}}">
           <view id='name'>
-            <text>{{user.username}}</text>
+            <text wx:if="{{user.name!==' '}}">{{user.name}}</text>
+            <text wx:else>{{user.phone}}</text>
           </view>
           <view id='count'>
-            <text>余额 {{user.money}}元</text>
-            <text>信用积分 666</text>
+            <text>余额 {{user.account}}元</text>
+            <text>信用积分 {{user.credit}}</text>
           </view>
         </view>
       </view>

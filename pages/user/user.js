@@ -10,28 +10,28 @@ Page({
     condition: 0
   },
   jumpToWallet() {
-    if (app.globalData.flag_login == 1) {
+    if (app.globalData.flag_login == true) {
       wx.navigateTo({
         url: '../wallet/wallet',
       })
     }
   },
   jumpToOrder() {
-    if (app.globalData.flag_login == 1) {
+    if (app.globalData.flag_login == true) {
       wx.navigateTo({
         url: '../order/order',
       })
     }
   },
   jumpToPublish() {
-    if (app.globalData.flag_login == 1) {
+    if (app.globalData.flag_login == true) {
       wx.navigateTo({
         url: '../publish/publish',
       })
     }
   },
   jumpToManage() {
-    if (app.globalData.flag_login == 1) {
+    if (app.globalData.flag_login == true) {
       wx.navigateTo({
         url: '../manage/manage',
       })
@@ -41,8 +41,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      user: app.globalData.userInformation
+    let that=this
+    wx.request({
+      url: 'http://127.0.0.1:3000/user/center',
+      data: {
+        phone: app.globalData.userName
+      },
+      success(res) {
+        that.setData({
+          user:res.data
+        })
+        console.log(that.data.user)
+      },
+      fail() {
+        wx.showToast({
+          title: '网络连接失败',
+          image: '/image/19.png'
+        })
+      }
     })
   },
 

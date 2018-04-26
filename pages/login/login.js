@@ -41,13 +41,15 @@ Page({
   },
   login() {
     if (this.data.identifyCode === '111111') {
+      let that=this
       wx.request({
         url: 'http://127.0.0.1:3000/user/login',
         data: {
-          phone: this.data.phone
+          phone: that.data.phone
         },
         success(res) {
-          app.globalData.userInformation=res.data
+          app.globalData.userName=that.data.phone
+          console.log(app.globalData.userName)
           app.globalData.flag_login = true;
           wx.navigateBack({
             url: '../index/index'

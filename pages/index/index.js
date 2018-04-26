@@ -33,7 +33,7 @@ Page({
     app.globalData.park_id = -1
   },
   markertap(e) {
-    if (app.globalData.flag_use === 0 && app.globalData.flag_login == 0) {
+    if (app.globalData.flag_use === true && app.globalData.flag_login == true) {
       let temp = {
         num: '10001',
         location: '',
@@ -46,7 +46,7 @@ Page({
       })
       app.globalData.park_id = e.markerId
     }
-    if (app.globalData.flag_use === 0 && app.globalData.flag_login == 1) {
+    if (app.globalData.flag_use === false && app.globalData.flag_login == true) {
       let temp = {
         num: '10001',
         location: '',
