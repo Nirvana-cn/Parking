@@ -1,28 +1,17 @@
-function AddMarker(obj) {
-  this.iconPath = "/image/18.png"
-  this.id = obj.sid
-  this.latitude = obj.latitude
-  this.longitude = obj.longitude
-  this.location = obj.location
-}
 const app = getApp()
 Page({
   data: {
     x: "120.352001",
     y: "30.313355",
+    // menu控制解锁和预约按钮样式
     menu: 'state_disappear',
+    // top控制顶部通知栏
     top: 'state_disappear',
     used_time: 'state_disappear',
     time: 0,
-    detail: {
-      num: '10001',
-      location: '',
-      time: '8:00-22:00'
-    },
-    markers: [],
-    markers_1: [],
-    markers_2: [],
-    markers_3: [],
+    detail: '',
+    markers:[],
+    parks: [[],[],[]],
     pic_address: ['/image/24.png', '/image/25.png', '/image/22.png']
   },
   clickMap() {
@@ -34,42 +23,44 @@ Page({
   },
   markertap(e) {
     if (app.globalData.flag_use === true && app.globalData.flag_login == true) {
+      let target = this.data.markers.filter((val) => { return val.id === e.markerId })[0]
       let temp = {
-        num: '10001',
-        location: '',
-        time: '8:00-22:00'
+        num: target.id,
+        location: target.location,
+        time: '全天'
       }
-      temp.location = this.data.markers.filter((val) => { return val.id === e.markerId })[0].location
       this.setData({
         top: 'top',
         detail: temp
       })
       app.globalData.park_id = e.markerId
+      console.log(e.markerId)
     }
     if (app.globalData.flag_use === false && app.globalData.flag_login == true) {
+      let target = this.data.markers.filter((val) => { return val.id === e.markerId })[0]
       let temp = {
-        num: '10001',
-        location: '',
-        time: '8:00-22:00'
+        num: target.id,
+        location: target.location,
+        time: '全天'
       }
-      temp.location = this.data.markers.filter((val) => { return val.id === e.markerId })[0].location
       this.setData({
         menu: 'pic',
         top: 'top',
         detail: temp
       })
       app.globalData.park_id = e.markerId
+      console.log(e.markerId)
     }
   },
   remind_1() {
-    if (app.globalData.flag_use === 0) {
+    if (app.globalData.flag_use === false) {
       wx.navigateTo({
         url: '../subscribe/subscribe'
       })
     }
   },
   remind_2() {
-    if (app.globalData.flag_use === 0) {
+    if (app.globalData.flag_use === false) {
       wx.navigateTo({
         url: '../lock/lock',
       })
@@ -94,37 +85,35 @@ Page({
   select_p1() {
     this.setData({
       pic_address: ['/image/23.png', '/image/26.png', '/image/22.png'],
-      markers: this.data.markers_1,
+      markers: this.data.parks[0],
       menu: 'state_disappear',
       top: 'state_disappear'
     })
-    // console.log(this.data.markers)
   },
   select_p2() {
     this.setData({
       pic_address: ['/image/24.png', '/image/25.png', '/image/22.png'],
-      markers: this.data.markers_2,
+      markers: this.data.parks[1],
       menu: 'state_disappear',
       top: 'state_disappear'
     })
-    // console.log(this.data.markers)
   },
   select_p3() {
     this.setData({
       pic_address: ['/image/24.png', '/image/26.png', '/image/21.png'],
-      markers: this.data.markers_3,
+      markers: this.data.parks[2],
       menu: 'state_disappear',
       top: 'state_disappear'
     })
-    // console.log(this.data.markers)
   },
   onLoad() {
-    if (app.globalData.flag_login == 0) {
+    if (app.globalData.flag_login == false) {
       wx.navigateTo({
         url: '../login/login',
       })
     }
     let that = this
+    // 初始化定位
     wx.getLocation({
       success: function (res) {
         that.setData({
@@ -133,37 +122,34 @@ Page({
         })
       }
     })
+    // 初始化可用车位标记点信息
     wx.request({
-      url: 'http://120.25.200.217:8080/IparkingWeb/Spaces.action?flag=1',
+      url: 'http://127.0.0.1:3000/park/init',
       data: {},
       success(res) {
-        for (let i = 0; i < res.data.length; i++) {
-          let temp = new AddMarker(res.data[i])
-          that.data.markers_1[i] = temp
-        }
-      }
-    })
-    wx.request({
-      url: 'http://120.25.200.217:8080/IparkingWeb/Spaces.action?flag=2',
-      data: {},
-      success(res) {
-        for (let i = 0; i < res.data.length; i++) {
-          let temp = new AddMarker(res.data[i])
-          that.data.markers_3[i] = temp
-        }
+        res.data.map((val)=>{that.data.parks[val.category-1].push({
+          id:val.park,
+          latitude:val.latitude,
+          longitude:val.longitude,
+          location:val.location,
+          iconPath:'/image/18.png'
+        })})
+        console.log(that.data.parks)
+        that.setData({
+          markers:that.data.parks[1]
+        })
       }
     })
   },
   onShow() {
-    let that = this
-    if (app.globalData.flag_use === 1) {
+    if (app.globalData.flag_use === true) {
       this.setData({
         menu: 'state_disappear',
         top: 'state_disappear',
         used_time: 'used_time'
       })
     }
-    if (app.globalData.flag_use === 2) {
+    if (app.globalData.flag_use === false) {
       this.setData({
         menu: 'state_disappear',
         top: 'state_disappear'

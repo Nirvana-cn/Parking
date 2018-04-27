@@ -1,6 +1,6 @@
 // pages/wallet/wallet.js
+let app=getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -8,12 +8,33 @@ Page({
     money:10
   },
   recharge(){
-    wx.requestPayment({
-      timeStamp: '1490840662',
-      nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
-      package: 'prepay_id=wx2017033010242291fcfe0db70013231072',
-      signType: 'MD5',
-      paySign: '',
+    wx.request({
+      url: 'http://127.0.0.1:3000/user/recharge',
+      data:{
+        phone:app.globalData.userName,
+        money:10
+      },
+      success(res) {
+        wx.showToast({
+          title: '充值成功',
+          image: '/image/20.png',
+          duration: 1500,
+          success() {
+            setTimeout(function(){
+              wx.navigateBack({
+                url: '../user/user',
+              })
+            },1500)
+          }
+        })
+      },
+      fail() {
+        wx.showToast({
+          title: '充值失败',
+          image: '/image/19.png',
+          duration: 1500
+        })
+      }
     })
   },
   /**

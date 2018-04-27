@@ -1,4 +1,19 @@
 <view class='wrapper'>
-  <view class='money'>余额：{{money}}元</view>
+  <view class='top'>
+    <view>余额</view>
+    <view>{{money}} 元</view>
+  </view>
+  <view class='middle'>
+    <view class='group'>
+      <button size='mini' hover-class='click'>10元</button>
+      <button size='mini' hover-class='click'>20元</button>
+      <button size='mini' hover-class='click'>30元</button>
+    </view>
+    <view class='group'>
+      <button size='mini' hover-class='click'>40元</button>
+      <button size='mini' hover-class='click'>50元</button>
+      <button size='mini' hover-class='click'>其他</button>
+    </view>
+  </view>
   <button type='primary' bindtap='recharge'>充值</button>
 </view>
