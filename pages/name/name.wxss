@@ -1,0 +1,10 @@
+/* pages/name/name.wxss */
+page{
+  width:100%;
+  box-sizing: border-box;
+  padding:60rpx;
+}
+input{
+  margin-bottom:60rpx;
+  border-bottom:1px solid #ccc;
+}

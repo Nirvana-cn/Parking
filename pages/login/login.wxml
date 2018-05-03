@@ -3,9 +3,11 @@
   <text class='title'>欢迎来到iParking</text>
   <input placeholder="请输入手机号码" type='number' maxlength='11' class='phone' bindblur='handle_phone'></input>
   <view class='wrapper'>
-    <input placeholder="请输入验证码" type='number' maxlength='6' class='code' bindblur='handle_code'></input>
+    <view class='content'>
+      <input placeholder="请输入验证码" type='number' maxlength='6' class='code' bindblur='handle_code'></input>
+    </view>
+    <button bindtap='sendCode' plain disabled="{{disabled}}" size='mini'>{{code}}</button>
   </view>
-  <span class='{{code_style}}' bindtap='sendCode' plain>{{code}}</span>
   <button type='primary' bindtap='login'>登录 / 注册</button>
   <text class="tip">注册即表示你已阅读，并同意《<text class="agreement">用户协议</text>》</text>
 </view>

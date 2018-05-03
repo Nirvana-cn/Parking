@@ -1,9 +1,7 @@
 .wrapper{
   padding:40rpx 40rpx
 }
-.click{
-  background:#afa;
-}
+
 .top{
   display: flex;
   flex-direction: row;
@@ -15,6 +13,15 @@
 .group{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom:40rpx;
+}
+.unselected{
+  width:25%;
+  background-color:#fff;
+  border:1rpx solid #ccc;
+  outline: none;
+}
+.selected{
+  background-color:#ccc;
 }

@@ -1,0 +1,3 @@
+<!--pages/name/name.wxml-->
+<input type='text' maxlength='10' placeholder='请输入您昵称' value="{{userName}}" bindinput='changeName' focus />
+<button bindtap='confirmName' type='primary'>确认修改</button>

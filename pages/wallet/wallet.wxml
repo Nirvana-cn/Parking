@@ -5,15 +5,15 @@
   </view>
   <view class='middle'>
     <view class='group'>
-      <button size='mini' hover-class='click'>10元</button>
-      <button size='mini' hover-class='click'>20元</button>
-      <button size='mini' hover-class='click'>30元</button>
+      <button class='unselected' size='mini' bindtap='selectButton'>10元</button>
+      <button class='unselected' size='mini' bindtap='selectButton'>20元</button>
+      <button class='unselected' size='mini' bindtap='selectButton'>30元</button>
     </view>
     <view class='group'>
-      <button size='mini' hover-class='click'>40元</button>
-      <button size='mini' hover-class='click'>50元</button>
-      <button size='mini' hover-class='click'>其他</button>
+      <button class='unselected' size='mini' bindtap='selectButton'>40元</button>
+      <button class='unselected' size='mini' bindtap='selectButton'>50元</button>
+      <button class='unselected' size='mini' bindtap='selectButton'>其他</button>
     </view>
   </view>
-  <button type='primary' bindtap='recharge'>充值</button>
+  <button type='primary' bindtap='recharge' >充值</button>
 </view>

@@ -1,12 +1,12 @@
 <view class='wrapper'>
-  <view class='top'>
+  <view class='top' bindtap='jumpToName'>
     <view class='top_contain'>
       <view class='top_contain'>
         <image src='/image/17.png' class='head'></image>
         <view wx:if="{{condition==0}}">未登录</view>
         <view wx:elif="{{condition==1}}">
           <view id='name'>
-            <text wx:if="{{user.name!==' '}}">{{user.name}}</text>
+            <text wx:if="{{user.name!==''}}">{{user.name}}</text>
             <text wx:else>{{user.phone}}</text>
           </view>
           <view id='count'>

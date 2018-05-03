@@ -3,9 +3,9 @@ const app = getApp();
 Page({
   data: {
     code: '获取验证码',
-    code_style: 'text',
     phone: '',
-    identifyCode: ''
+    identifyCode: '',
+    disabled:false
   },
   handle_phone(event) {
     this.data.phone = event.detail.value
@@ -24,7 +24,7 @@ Page({
     let that=this;
     this.setData({
       code: '验证码已发送(' + n + 's)',
-      code_style: 'text text_change'
+      disabled:true
     })
     let time=setInterval(function () {
       that.setData({
@@ -33,7 +33,7 @@ Page({
       if(n===-1){
         that.setData({
           code: '获取验证码',
-          code_style: 'text'
+          disabled: false
         })
         clearInterval(time)
       }
@@ -48,8 +48,8 @@ Page({
           phone: that.data.phone
         },
         success(res) {
-          app.globalData.userName=that.data.phone
-          console.log(app.globalData.userName)
+          app.globalData.userInformation=res.data
+          // console.log(res.data)
           app.globalData.flag_login = true;
           wx.navigateBack({
             url: '../index/index'

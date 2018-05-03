@@ -14,8 +14,9 @@
 }
 
 .wrapper {
-  float: left;
-  width: 50%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 60rpx;
 }
 
 .code {
@@ -24,18 +25,8 @@
   border-bottom: 2rpx solid #000;
 }
 
-.text {
-  font-size: 25rpx;
-  padding-left: 50rpx;
-  color: blue;
-}
-
-.text_change {
-  color: grey;
-}
-
-button {
-  margin-top: 60rpx;
+.content {
+  width: 40%;
 }
 
 .tip {

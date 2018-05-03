@@ -1,45 +1,34 @@
-// pages/wallet/wallet.js
-let app=getApp();
+// pages/name/name.js
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    style:"unselected",
-    money:10
+    userName: ''
   },
-  selectButton(e) {
+  changeName(e) {
     this.setData({
-      style:"unselected"
+      userName:e.detail.value
     })
-    console.log(e)
   },
-  recharge(){
+  confirmName() {
+    let that=this
     wx.request({
-      url: 'http://127.0.0.1:3000/user/recharge',
-      data:{
-        phone:app.globalData.userInformation.phone,
-        money:10
+      url: 'http://127.0.0.1:3000/user/name',
+      data: {
+        phone: app.globalData.userInformation.phone,
+        name: that.data.userName
       },
       success(res) {
-        wx.showToast({
-          title: '充值成功',
-          image: '/image/20.png',
-          duration: 1500,
-          success() {
-            setTimeout(function(){
-              wx.navigateBack({
-                url: '../user/user',
-              })
-            },1500)
-          }
+        wx.navigateBack({
+          url: '../user/user',
         })
       },
       fail() {
         wx.showToast({
-          title: '充值失败',
-          image: '/image/19.png',
-          duration: 1500
+          title: '网络连接失败',
+          image: '/image/19.png'
         })
       }
     })
@@ -62,7 +51,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      userName: app.globalData.userInformation.name
+    })
   },
 
   /**

@@ -9,6 +9,17 @@ Page({
     user: '',
     condition: 0
   },
+  jumpToName() {
+    if (app.globalData.flag_login == true) {
+      wx.navigateTo({
+        url: '../name/name',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
+  },
   jumpToWallet() {
     if (app.globalData.flag_login == true) {
       wx.navigateTo({
@@ -41,25 +52,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that=this
-    wx.request({
-      url: 'http://127.0.0.1:3000/user/center',
-      data: {
-        phone: app.globalData.userName
-      },
-      success(res) {
-        that.setData({
-          user:res.data
-        })
-        console.log(that.data.user)
-      },
-      fail() {
-        wx.showToast({
-          title: '网络连接失败',
-          image: '/image/19.png'
-        })
-      }
-    })
+    
   },
 
   /**
@@ -76,6 +69,26 @@ Page({
     if (app.globalData.flag_login == 1) {
       this.setData({
         condition: 1
+      })
+      let that = this
+      wx.request({
+        url: 'http://127.0.0.1:3000/user/center',
+        data: {
+          phone: app.globalData.userInformation.phone
+        },
+        success(res) {
+          that.setData({
+            user: res.data
+          })
+          app.globalData.userInformation = res.data
+          console.log(app.globalData.userInformation)
+        },
+        fail() {
+          wx.showToast({
+            title: '网络连接失败',
+            image: '/image/19.png'
+          })
+        }
       })
     }
   },

@@ -9,7 +9,8 @@
     "pages/order/order",
     "pages/publish/publish",
     "pages/manage/manage",
-    "pages/wallet/wallet"
+    "pages/wallet/wallet",
+    "pages/name/name"
   ],
   "window": {
     "backgroundTextStyle": "light",
