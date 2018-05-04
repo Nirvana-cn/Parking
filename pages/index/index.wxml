@@ -18,8 +18,8 @@
     </cover-view>
   </cover-view>
   <cover-view class='tool'>
-    <cover-image src='/image/6.png' class='{{menu}}' bindtap='remind_1'></cover-image>
-    <cover-image src='/image/7.png' class='{{menu}}' bindtap='remind_2'></cover-image>
+    <cover-image src='/image/6.png' class='{{menu1}}' bindtap='remind_1'></cover-image>
+    <cover-image src='/image/7.png' class='{{menu2}}' bindtap='remind_2'></cover-image>
     <cover-image src='/image/15.png' class='pic' bindtap='remind_3'></cover-image>
     <cover-image src='/image/17.png' class='pic' bindtap='remind_4'></cover-image>
   </cover-view>

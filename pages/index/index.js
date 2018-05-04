@@ -4,10 +4,12 @@ Page({
     x: "120.352001",
     y: "30.313355",
     // menu控制解锁和预约按钮样式
-    menu: 'state_disappear',
+    menu1: 'state_disappear',
+    menu2: 'state_disappear',
     // top控制顶部通知栏
     top: 'state_disappear',
     used_time: 'state_disappear',
+    available:true,
     time: 0,
     detail: '',
     markers:[],
@@ -16,7 +18,8 @@ Page({
   },
   clickMap() {
     this.setData({
-      menu: 'state_disappear',
+      menu1: 'state_disappear',
+      menu2: 'state_disappear',
       top: 'state_disappear'
     })
     app.globalData.park_id = -1
@@ -43,11 +46,20 @@ Page({
         location: target.location,
         time: '全天'
       }
-      this.setData({
-        menu: 'pic',
-        top: 'top',
-        detail: temp
-      })
+      if(this.data.available==true){
+        this.setData({
+          menu1: 'pic',
+          menu2: 'pic',
+          top: 'top',
+          detail: temp
+        })
+      }else{
+        this.setData({
+          menu2: 'pic',
+          top: 'top',
+          detail: temp
+        })
+      }
       app.globalData.park_id = e.markerId
       console.log(e.markerId)
     }
@@ -86,24 +98,30 @@ Page({
     this.setData({
       pic_address: ['/image/23.png', '/image/26.png', '/image/22.png'],
       markers: this.data.parks[0],
-      menu: 'state_disappear',
-      top: 'state_disappear'
+      menu1: 'state_disappear',
+      menu2: 'state_disappear',
+      top: 'state_disappear',
+      available: true
     })
   },
   select_p2() {
     this.setData({
       pic_address: ['/image/24.png', '/image/25.png', '/image/22.png'],
       markers: this.data.parks[1],
-      menu: 'state_disappear',
-      top: 'state_disappear'
+      menu1: 'state_disappear',
+      menu2: 'state_disappear',
+      top: 'state_disappear',
+      available: true
     })
   },
   select_p3() {
     this.setData({
       pic_address: ['/image/24.png', '/image/26.png', '/image/21.png'],
       markers: this.data.parks[2],
-      menu: 'state_disappear',
-      top: 'state_disappear'
+      menu1: 'state_disappear',
+      menu2: 'state_disappear',
+      top: 'state_disappear',
+      available: false
     })
   },
   onLoad() {
@@ -122,38 +140,46 @@ Page({
         })
       }
     })
-    // 初始化可用车位标记点信息
-    wx.request({
-      url: 'http://127.0.0.1:3000/park/init',
-      data: {},
-      success(res) {
-        res.data.map((val)=>{that.data.parks[val.category-1].push({
-          id:val.park,
-          latitude:val.latitude,
-          longitude:val.longitude,
-          location:val.location,
-          iconPath:'/image/18.png'
-        })})
-        console.log(that.data.parks)
-        that.setData({
-          markers:that.data.parks[1]
-        })
-      }
-    })
   },
   onShow() {
     if (app.globalData.flag_use === true) {
       this.setData({
-        menu: 'state_disappear',
+        menu1: 'state_disappear',
+        menu2: 'state_disappear',
         top: 'state_disappear',
         used_time: 'used_time'
       })
     }
     if (app.globalData.flag_use === false) {
       this.setData({
-        menu: 'state_disappear',
+        menu1: 'state_disappear',
+        menu2: 'state_disappear',
         top: 'state_disappear'
       })
     }
+    // 初始化可用车位标记点信息
+    let that=this
+    wx.request({
+      url: 'http://127.0.0.1:3000/park/init',
+      data: {},
+      success(res) {
+        that.setData({
+          parks: [[], [], []]
+        })
+        res.data.map((val) => {
+          that.data.parks[val.category - 1].push({
+            id: val.park,
+            latitude: val.latitude,
+            longitude: val.longitude,
+            location: val.location,
+            iconPath: '/image/18.png'
+          })
+        })
+        console.log(that.data.parks)
+        that.setData({
+          markers: that.data.parks[1]
+        })
+      }
+    })
   }
 })
