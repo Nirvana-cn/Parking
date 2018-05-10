@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<map id="map" longitude='{{x}}' latitude='{{y}}' scale="6" show-location='true' markers='{{markers}}' bindmarkertap="markertap" controls='controls' bindtap='clickMap'>
+<map id="map" longitude='{{x}}' latitude='{{y}}' scale="12" show-location='true' markers='{{markers}}' bindmarkertap="markertap" controls='controls' bindtap='clickMap'>
   <cover-view class='{{top}}'>
     <cover-view class='info_1'>位置：{{detail.location}}</cover-view>
     <cover-view class='top_contain'>
@@ -7,7 +7,7 @@
       <cover-view class='info_2'>可用时段：{{detail.time}}</cover-view>
     </cover-view>
   </cover-view>
-  <cover-view class='{{used_time}}'>
+  <cover-view class='{{used_time}}'  bindtap='jump'>
     <cover-view class='used_wrapper'>
       <cover-view class='used_t1'>离开车位自动结束计费</cover-view>
       <cover-view class='used_t2'>离开后未结费？</cover-view>

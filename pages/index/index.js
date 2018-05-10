@@ -33,7 +33,7 @@ Page({
         time: '全天'
       }
       this.setData({
-        top: 'top',
+        top: 'state_disappear',
         detail: temp
       })
       app.globalData.park_id = e.markerId
@@ -63,6 +63,11 @@ Page({
       app.globalData.park_id = e.markerId
       console.log(e.markerId)
     }
+  },
+  jump(){
+    wx.navigateTo({
+      url: '../lock/lock',
+    })
   },
   remind_1() {
     if (app.globalData.flag_use === false) {

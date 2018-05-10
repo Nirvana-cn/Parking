@@ -1,9 +1,19 @@
-<view>
-  <view class='wrapper'>
+<view class='wrapper'>
+  <view class='{{first}}'>
     <image src='/image/17.png' class='pic'></image>
     <view>
       <text class='content'>开锁中，请不要关闭小程序</text>
     </view>
-    <view class='ad'>Advertisement</view>
+  </view>
+  <view class='{{second}}'>
+    <view class='node'>计费信息</view>
+    <view class='node'>车位编号：10002</view>
+    <view class='node'>位置信息：浙江理工大学图书馆</view>
+    <view class='node'>开始时间：2018/5/9 20：00</view>
+    <view class='node'>正在使用：50分钟</view>
+    <view class='node'>
+      <text>tip：离开自动结束计费 </text>
+      <text class='problem'> 离开未结束计费？</text>
+    </view>
   </view>
 </view>

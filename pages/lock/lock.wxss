@@ -1,13 +1,24 @@
-page{
-  background-color:#2A2A32;
-}
 .wrapper{
   width:100%;
-  padding-top:200rpx;
+}
+.top{
+  margin-top:200rpx;
+  width:100%;
   text-align: center;
 }
+.bottom{
+  width:100%;
+  font-size:30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.node{
+  margin-top:20rpx;
+}
+.hidden{
+  display: none;
+}
 .content{
-  color:#fff;
   font-size:26rpx;
 }
 .pic{
@@ -15,9 +26,7 @@ page{
   width:200rpx;
   height:200rpx;
 }
-.ad{
-  margin:100rpx auto;
-  width:360rpx;
-  height:225rpx;
-  background-color:#fff;
+.problem{
+  font-size:24rpx;
+  color: dodgerblue;
 }

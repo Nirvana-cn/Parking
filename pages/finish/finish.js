@@ -3,11 +3,11 @@ Page({
   data: {
     time:0,
     money:0,
-    cost:0,
-    pay:0
+    cost:5,
+    pay:5
   },
   returnIndex(){
-    app.globalData.flag_use=0
+    app.globalData.flag_use=false
     wx.reLaunch({
       url: '../index/index',
     })
@@ -16,7 +16,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let that=this
+    wx.request({
+      url: 'http://127.0.0.1:3000/user/clear',
+      data:{
+        phone:app.globalData.userInformation.phone
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          time:new Date(res.data.time).getSeconds(),
+          money:app.globalData.userInformation.account
+        })
+      }
+    })
   },
 
   /**
