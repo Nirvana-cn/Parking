@@ -54,6 +54,13 @@
       </view>
       <image src='/image/4.png' class='right_pic'></image>
     </view>
+    <view class='contain' bindtap='jumpToHistory'>
+      <view class='contain_in'>
+        <image src='/image/27.png' class='pic'></image>
+        <text>历史订单</text>
+      </view>
+      <image src='/image/4.png' class='right_pic'></image>
+    </view>
     <view class='contain gap'>
       <view class='contain_in'>
         <image src='/image/12.png' class='pic'></image>
