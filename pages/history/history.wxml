@@ -1,2 +1,10 @@
 <!--pages/history/history.wxml-->
-<text>pages/history/history.wxml</text>
+<view>
+  <view wx:for="{{history}}">
+    <view>{{item.phone}}</view>
+    <view>
+      <view>开始时间{{item.startTime}}</view>
+      <view>结束时间{{item.finishTime}}</view>
+    </view>
+  </view>
+</view>

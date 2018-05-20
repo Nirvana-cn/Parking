@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    history:''
   },
 
   /**
@@ -27,6 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this
     wx.request({
       url: 'http://127.0.0.1:3000/user/history',
       data: {
@@ -34,6 +35,9 @@ Page({
       },
       success(res) {
         console.log(res.data)
+        that.setData({
+          history:res.data
+        })
       }
     })
   },

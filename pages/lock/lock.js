@@ -40,7 +40,6 @@ wx.onSocketMessage(function (res) {
   if (res.data === 'success') {
     app.globalData.flag_use = true
     console.log('receive ' + res.data)
-    console.log(that.data.top)
     that.setData({
       first:'hidden',
       second:'bottom'
